@@ -88,7 +88,6 @@ def addResetBtn():
 def verifyHash():
   global labelResults
   h = getHash()
-  print(h)
   with file1 as afile:
     buf = afile.read(BLOCKSIZE)
     while len(buf) > 0:
@@ -101,6 +100,8 @@ def verifyHash():
     resultText = "Success!"
   else:
     resultText = "FAILED"
+  print(hashValue)
+  print(checksum)
   labelResults = Label(window, text = resultText)
   labelResults.grid(row = 6, column = 5, sticky = E, pady = 5)
   addResetBtn()
